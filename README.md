@@ -35,7 +35,7 @@ A responsive, multi-page web portal created as part of the **BIM222 Web Technolo
 ## 🌐 Live Preview (GitHub Pages)
 
 Once hosted on GitHub Pages, visit:
-`https://<your-username>.github.io/<repository-name>/`
+`https://lezki06.github.io/estu-web-portal/`
 
 ---
 *Created by Şevki Duhan Lezki*
