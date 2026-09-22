@@ -1,0 +1,244 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Welcome to Eskişehir Technical University's official home page, featuring the latest news and announcements.">
+    <meta name="keywords" content="ESTU, Home, University News, Announcements, Eskişehir Technical University.">
+    <meta name="author" content="Şevki Duhan Lezki">
+    <meta name="robots" content="index, follow">
+    <title>Home | Eskişehir Technical University</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+         body { background-color: #fafaf8; }
+        .sidebar { background-color: #f7f6f3; }
+        nav img {
+           mix-blend-mode: multiply; 
+        }
+        footer { background-color: #f7f6f3;
+        border-top: 3px solid #c0392b !important }
+        main { background-color: #ffffff; }
+        .active-page {
+            font-size: 1.1rem;
+            font-weight: bold;
+        }
+        .sidebar {
+            min-height: 500px;
+            border-right: 1px solid #dee2e6;
+        }
+        footer {
+            border: 1px solid #dee2e6;
+            padding: 5px;
+        }
+        /* HEADER WITH CAMPUS PHOTO */
+        header {
+            position: relative;
+            overflow: hidden;
+            height: 130px;
+            border: none;
+        }
+        header img.header-bg {
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+        }
+        header::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.52);
+        }
+        header h1 {
+            position: relative;
+            z-index: 1;
+            color: white;
+            text-shadow: 0 2px 8px rgba(0,0,0,0.7);
+            margin: 0;
+            padding: 36px 0;
+            font-size: 1.8rem;
+            font-weight: 300;
+            letter-spacing: 6px;
+            text-transform: uppercase;
+        }
+        .nav-link {
+            color: #333;
+            border-radius: 6px;
+            transition: background 0.2s, color 0.2s;
+            border-bottom: 1px solid #e8e8e8;
+       }
+       .nav-link:hover {
+            background: #fff0f0;
+            color: #c0392b !important;
+       }
+       .active-page {
+           color: #c0392b !important;
+       }
+ 
+        /* ZOOM PHOTO */
+        .campus-photo-wrapper {
+            overflow: hidden;
+            border-radius: 10px;
+            margin-bottom: 28px;
+            position: relative;
+            cursor: pointer;
+        }
+        .campus-photo-wrapper img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.5s ease, filter 0.5s ease;
+            filter: brightness(0.88);
+        }
+        .campus-photo-wrapper:hover img {
+            transform: scale(1.07);
+            filter: brightness(1);
+        }
+        .campus-photo-wrapper .photo-caption {
+            position: absolute;
+            bottom: 0; left: 0; right: 0;
+            padding: 36px 16px 12px;
+            background: linear-gradient(to top, rgba(0,0,0,0.6), transparent);
+            color: white;
+            font-size: 0.83rem;
+            letter-spacing: 0.04em;
+        }
+
+        /* ANNOUNCEMENTS */
+        .announcements-box {
+            background: white;
+            border: 1px solid #dee2e6;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        .ann-header {
+            background: #c0392b;
+            padding: 10px 16px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .ann-header h2 {
+            margin: 0;
+            font-size: 0.82rem;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: white;
+        }
+        .ann-header .badge-new {
+            background: white;
+            color: #c0392b;
+            font-size: 0.62rem;
+            padding: 2px 9px;
+            border-radius: 10px;
+            font-weight: 700;
+        }
+        .ann-item {
+            display: flex;
+            gap: 12px;
+            align-items: flex-start;
+            padding: 11px 16px;
+            border-bottom: 1px solid #f0f0f0;
+            text-decoration: none;
+            transition: background 0.2s, padding-left 0.2s;
+        }
+        .ann-item:hover { background: #fff5f5;
+        padding-left: 20px; }
+        .ann-date {
+            min-width: 38px;
+            text-align: center;
+            background: rgba(192,57,43,0.08);
+            border: 1px solid rgba(192,57,43,0.3);
+            border-radius: 6px;
+            padding: 5px 3px;
+            flex-shrink: 0;
+        }
+        .ann-date .day { display: block; font-size: 1.15rem; font-weight: 700; color: #c0392b; line-height: 1; }
+        .ann-date .mon { display: block; font-size: 0.57rem; color: #999; text-transform: uppercase; letter-spacing: 0.05em; }
+        .ann-tag { font-size: 0.58rem; letter-spacing: 0.1em; text-transform: uppercase; color: #c0392b; margin-bottom: 2px; }
+        .ann-title { font-size: 0.78rem; color: #1a1a1a; line-height: 1.4; }
+        .nav-item-dropdown { position: relative; }
+        .submenu {
+            display: none; position: absolute; left: 100%; top: 0;
+            background: white; border: 1px solid #dee2e6; border-radius: 6px;
+            min-width: 130px; box-shadow: 2px 4px 10px rgba(0,0,0,0.1); z-index: 999;
+        }
+        .nav-item-dropdown:hover .submenu { display: block; }
+        .submenu a { display: block; padding: 8px 14px; font-size: 0.82rem; color: #333; text-decoration: none; }
+        .submenu a:hover { background: #fff5f5; color: #c0392b; }
+    </style>
+</head>
+<body>
+    <div class="container-fluid py-3">
+        <header class="text-center mb-3">
+            <img src="images/deneme.jpg" alt="ESTU photo" class="header-bg">
+            <h1 class="display-5">ESKİŞEHİR TECHNICAL UNIVERSITY</h1>
+        </header>
+        <div class="row">
+            <nav class="col-md-1 sidebar">
+                <img src="images/estu_logo.jpg" alt="ESTU logo" class="img-fluid p-1 mt-2" width="600" height="600"   >
+                <ul class="nav flex-column mt-3">
+                    <li class="new-item"><a class="nav-link active-page" href="index.html">HOME</a></li>
+                    <li class="new-item"><a class="nav-link" href="university.html">UNIVERSITY</a></li>
+                    <li class="new-item"><a class="nav-link" href="academics.html">ACADEMICS</a></li>
+                    <li class="nav-item-dropdown">
+                    <a class="nav-link" href="students.html">STUDENTS</a>
+                    <div class="submenu">
+                        <a href="login.html">Student Login</a>
+                        <a href="documents.html">Documents</a>
+                    </div>
+                </li>
+                    <li class="new-item"><a class="nav-link" href="campuslife.html">CAMPUS LIFE</a></li>
+                </ul>
+            </nav>
+
+            <main class="col-md-11 p-4">
+
+                <!-- ZOOM PHOTO -->
+                <div class="campus-photo-wrapper">
+                    <img src="images/ESTU_bayrak.png" alt="ESTU Campus">
+                    <div class="photo-caption">📍 Eskişehir Technical University — Main Campus</div>
+                </div>
+
+                <!-- ANNOUNCEMENTS -->
+                <div class="announcements-box">
+                    <div class="ann-header">
+                        <h2>📢 Announcements</h2>
+                        <span class="badge-new">5 NEW</span>
+                    </div>
+                    <a class="ann-item" href="#">
+                        <div class="ann-date"><span class="day">16</span><span class="mon">Mar</span></div>
+                        <div><div class="ann-tag">Academic</div><div class="ann-title">Spring 2026 Midterm Exam Schedule is Now Published.</div></div>
+                    </a>
+                    <a class="ann-item" href="#">
+                        <div class="ann-date"><span class="day">12</span><span class="mon">Mar</span></div>
+                        <div><div class="ann-tag">Student</div><div class="ann-title">2026 International Student Placement Results Announced.</div></div>
+                    </a>
+                    <a class="ann-item" href="#">
+                        <div class="ann-date"><span class="day">10</span><span class="mon">Mar</span></div>
+                        <div><div class="ann-tag">Event</div><div class="ann-title">ESTU Career and Employment Days: Workshop Registrations are Open.</div></div>
+                    </a>
+                    <a class="ann-item" href="#">
+                        <div class="ann-date"><span class="day">05</span><span class="mon">Mar</span></div>
+                        <div><div class="ann-tag">Research</div><div class="ann-title">TÜBİTAK 2209-A Student Research Project Grant Results.</div></div>
+                    </a>
+                    <a class="ann-item" href="#">
+                        <div class="ann-date"><span class="day">01</span><span class="mon">Mar</span></div>
+                        <div><div class="ann-tag">Campus</div><div class="ann-title">Library Hours Extended for Midterm Preparation (Starting March 15).</div></div>
+                    </a>
+                </div>
+
+            </main>
+        </div>
+        <footer class="mt-3 text-center">
+            <p>&copy;Eskişehir Technical University - 2026 - Şevki Duhan Lezki</p>
+        </footer>
+    </div>
+</body>
+</html>

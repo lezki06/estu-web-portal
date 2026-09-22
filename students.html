@@ -1,0 +1,209 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Essential resources for students, including academic calendars, student clubs, and campus facilities.">
+    <meta name="keywords" content="ESTU Students, Student Life, Clubs, Calendar, Campus Map.">
+    <meta name="author" content="Şevki Duhan Lezki">
+    <meta name="robots" content="index, follow">
+    <title>For Students | Campus Resources & Clubs - ESTÜ</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body { background-color: #fafaf8; }
+       .sidebar { background-color: #f7f6f3; }
+       nav img { mix-blend-mode: multiply; }
+        footer { background-color: #f7f6f3;
+        border-top: 3px solid #c0392b !important }
+        main { background-color: #ffffff; }
+        .active-page { font-size: 1.1rem !important; font-weight: bold !important; }
+        .sidebar { min-height: 500px; border-right: 1px solid #dee2e6; }
+        footer { border: 1px solid #dee2e6; padding: 5px; }
+
+        header {
+            position: relative;
+            overflow: hidden;
+            height: 130px;
+            border: none;
+        }
+        header img.header-bg {
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            object-fit: cover;
+            object-position: center;
+        }
+        header::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.52);
+        }
+        header h1 {
+            position: relative;
+            z-index: 1;
+            color: white;
+            text-shadow: 0 2px 8px rgba(0,0,0,0.7);
+            margin: 0;
+            padding: 36px 0;
+            font-size: 1.8rem;
+            font-weight: 300;
+            letter-spacing: 6px;
+            text-transform: uppercase;
+        }
+        .nav-item-dropdown { position: relative; }
+        .submenu {
+            display: none; position: absolute; left: 100%; top: 0;
+            background: white; border: 1px solid #dee2e6; border-radius: 6px;
+            min-width: 130px; box-shadow: 2px 4px 10px rgba(0,0,0,0.1); z-index: 999;
+        }
+        .nav-item-dropdown:hover .submenu { display: block; }
+        .submenu a { display: block; padding: 8px 14px; font-size: 0.82rem; color: #333; text-decoration: none; }
+        .submenu a:hover { background: #fff5f5; color: #c0392b; }
+        .nav-link { color: #333; border-radius: 6px; transition: background 0.2s, color 0.2s;
+        border-bottom: 1px solid #e8e8e8; }
+        .nav-link:hover { background: #fff0f0; color: #c0392b !important; }
+        .active-page { color: #c0392b !important; }
+
+        .info-card {
+            background: #fff;
+            border: 1px solid #dee2e6;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 18px;
+        }
+        .info-card h3 {
+            font-weight: 700;
+            font-size: 1rem;
+            color: #0d1b2e;
+            border-left: 4px solid #c0392b;
+            padding-left: 10px;
+            margin-bottom: 12px;
+        }
+        .info-card p, .info-card li { font-size: 0.87rem; color: #444; line-height: 1.75; }
+        .info-card ul { padding-left: 18px; }
+
+        .clubs-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+            margin-top: 10px;
+        }
+        .club-item {
+            background: #f8f9fa;
+            border: 1px solid #dee2e6;
+            border-radius: 6px;
+            padding: 10px 12px;
+            font-size: 0.82rem;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <div class="container-fluid py-3">
+
+        <header class="text-center mb-3">
+            <img src="images/deneme.jpg" alt="ESTU photo" class="header-bg">
+            <h1 class="display-5">ESKİŞEHİR TECHNICAL UNIVERSITY</h1>
+        </header>
+
+        <div class="row">
+            <nav class="col-md-1 sidebar">
+                <img src="images/estu_logo.jpg" alt="ESTU Logo" class="img-fluid p-1 mt-2">
+                <ul class="nav flex-column mt-3">
+                    <li><a class="nav-link" href="index.html">HOME</a></li>
+                    <li><a class="nav-link" href="university.html">UNIVERSITY</a></li>
+                    <li><a class="nav-link" href="academics.html">ACADEMICS</a></li>
+                    <li class="nav-item-dropdown">
+                        <a class="nav-link active-page" href="students.html">STUDENTS</a>
+                        <div class="submenu">
+                            <a href="login.html">Student Login</a>
+                            <a href="documents.html">Documents</a>
+                        </div>
+                    </li>
+                    <li><a class="nav-link" href="campuslife.html">CAMPUS LIFE</a></li>
+                </ul>
+            </nav>
+
+            <main class="col-md-11 p-4">
+
+                <h2 class="mb-4">Student Information</h2>
+
+                <div class="info-card">
+                    <h3>📅 Academic Calendar</h3>
+                    <ul>
+                        <li>Spring Semester Start: February 9, 2026</li>
+                        <li>Add-Drop Period: February 11–13, 2026</li>
+                        <li>Midterm Exams: March 28–12 April, 2026</li>
+                        <li>Final Exams: June 01–13, 2026</li>
+                        <li><a href="https://www.eskisehir.edu.tr/Uploads/www/files/AkademikTakvim/Eskişehir%20Teknik%20Üniversitesi%202025-2026%20Akademik%20Yılı%20Akademik%20Takvimi%2010_03_2026.pdf">Click here for extra information</a></li>
+                    </ul>
+                </div>
+
+                <div class="info-card">
+                    <h3>🎓 Student Information Systems</h3>
+                    <ul>
+                        <li><a href="https://obs.eskisehir.edu.tr/#/">Student Information System</a></li>
+                        <li><a href="https://estuoys.eskisehir.edu.tr">Canvas for Students</a></li>
+                    </ul>
+                </div>
+
+                <div class="info-card">
+                    <h3>🎭 Student Clubs &amp; Communities</h3>
+                    <p>Over 60 active student clubs operate on campus. Some popular ones:</p>
+                    <div class="clubs-grid">
+                        <div class="club-item">🤖 Robotics & Automation Society</div>
+                        <div class="club-item">🎸 Music Club</div>
+                        <div class="club-item">📷 Photography Club</div>
+                        <div class="club-item">♟ Chess Club</div>
+                        <div class="club-item">🌍 Environment Club</div>
+                        <div class="club-item">💻 Software and Informatics Club</div>
+                        <div class="club-item">🎨 Fine Arts Club</div>
+                        <div class="club-item">🎬 Cinema Club</div>
+                        <div class="club-item">🧗 Outdoor Sports Club</div>
+                        <div class="club-item">✈️ Aviation Club</div>
+                    </div>
+                </div>
+
+                   <div class="info-card">
+                    <h3>⚽ Sports Facilities</h3>
+                    <ul>
+                        <li>Football fields (natural and artificial turf)</li>
+                        <li>Indoor sports hall – basketball, volleyball, badminton</li>
+                        <li>Hasan Polatkan Airport Area for training</li>
+                        <li>Fitness center open 07:00–22:00 on weekdays</li>
+                        <li>Tennis and table tennis courts</li>
+                    </ul>
+                </div>
+
+                <div class="row">
+                     <div class="col-md-8">
+                        <div class="info-card">
+                    <h3>🗺️ Campus Map</h3>
+                    <img src="images/Kampus_haritasi.png" alt="Map of ESTU Campus" style="max-width:100%; width:88%;"><br>
+                </div>
+               </div>
+                    <div class="col-md-4">
+                         <div class="info-card">
+                    <h3>📞 Important Contacts</h3>
+                    <ul>
+                        <li>Student Affairs: <strong>+90 222 321 35 50 / Ext: 6000</strong></li>
+                        <li>IT Help Desk:<strong>bidb@eskisehir.edu.tr</strong></li>
+                        <li>Library: <strong>+90 222 321 35 50 / Ext: 7100</strong></li>
+                        <li>Career Center: <strong>kariyermerkezi@eskisehir.edu.tr</strong></li>
+                        <li>International Relations: <strong>iro@eskisehir.edu.tr</strong></li>
+                    </ul>
+                </div>
+            </div>
+               
+            </div>
+            </main>
+        </div>
+
+        <footer class="mt-3 text-center">
+            <p>&copy;Eskişehir Technical University - 2026 - Şevki Duhan Lezki</p>
+        </footer>
+    </div>
+</body>
+</html>
